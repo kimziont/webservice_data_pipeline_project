@@ -1,0 +1,48 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="wrap-post">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div class="editor">
+
+            <div>{{form.movie_image}}</div>
+
+            <div class="input input-date"><p>개봉 날짜</p>{{form.release_date}}</div>
+
+             
+            <div class="input input-title">
+                <p>제목</p>
+                {{form.title}}
+                {% for error in form.title.errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            
+            <div class="input input-state">
+                <p>국가</p>
+                {{form.nation}}
+                {% for error in form.nation.errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+            </div>
+
+            <div class="input input-state">
+                <p>장르</p>
+                {{form.genre}}
+                {% for error in form.genre.errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+            </div>
+
+            {{form.summary}}
+            {% for error in form.summary.errors %}
+                <span>{{error}}</span>
+            {% endfor %}
+
+            <div class="post-btn">
+                <input type="submit" value="작성완료">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="wrap-post">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div class="editor">
+
+            <div class="input input-score">
+                <p>점수</p>
+                {{form.score}}
+                {% for error in form.score.errors %}
+                    <span>{{error}}</span>
+                {% endfor %}
+            </div>
+            
+            {{form.movie}}
+            {% for error in form.movie.errors %}
+                <span>{{error}}</span>
+            {% endfor %}
+
+            {{form.review}}
+            {% for error in form.review.errors %}
+                <span>{{error}}</span>
+            {% endfor %}
+
+
+            <div class="post-btn">
+                <input type="submit" value="작성완료">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

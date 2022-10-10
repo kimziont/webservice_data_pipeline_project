@@ -1,0 +1,42 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="wrap-notetext">
+    <div class="notetext">
+        <div class="text-box">
+            <h2>{{object.title}}</h2>
+            
+            <img src="{{object.movie_image.url}}">
+            <div class="state">
+                <p>개봉일</p>
+                <span>{{object.release_date}}</span>
+            </div>
+            <div class="state">
+                <p>국가</p>
+                <span>{{object.nation}}</span>
+            </div>
+            <div class="score">
+                <p>장르</p>
+                <span>{{object.genre}}</span>
+            </div>
+            <div class="content">
+                <p>소개</p>
+                <span>{{object.summary}}</span>
+            </div> 
+            <div class="detail">{{object.content|linebreaksbr}}</div>
+            {% if not user.is_authenticated %}
+                <a href="{% url 'login' %}">
+                    <button type="button">시청하기 위해 로그인이 필요합니다</button>
+                </a>           
+            {% else %}
+                <a href="{% url 'movie-play' object.id %}">
+                    <button type="button">Play</button>
+                </a>
+                <a href="{% url 'comment-create' %}">
+                    <button type="button">Comment</button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

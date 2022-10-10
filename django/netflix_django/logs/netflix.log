@@ -1,0 +1,17 @@
+
+[2022-07-19 21:31:27] method=GET user=jaykim path=/movies/movie-play/15 movie_id=15
+[2022-07-19 21:31:44] method=POST user=jaykim path=/movies/comment-create/ movie_id=15
+[2022-07-19 21:31:48] method=GET user=jaykim path=/movies/movie-play/8 movie_id=8
+[2022-07-19 21:31:59] method=GET user=jaykim path=/movies/movie-play/12 movie_id=12
+[2022-07-19 21:32:01] method=GET user=jaykim path=/movies/movie-play/12 movie_id=12
+[2022-07-19 21:32:02] method=GET user=jaykim path=/movies/movie-play/12 movie_id=12
+[2022-07-19 21:32:03] method=GET user=jaykim path=/movies/movie-play/12 movie_id=12
+[2022-07-19 21:33:24] method=GET user=kkk0510 path=/movies/movie-play/17 movie_id=17
+[2022-07-19 21:33:26] method=GET user=kkk0510 path=/movies/movie-play/17 movie_id=17
+[2022-07-19 21:33:27] method=GET user=kkk0510 path=/movies/movie-play/17 movie_id=17
+[2022-07-19 21:33:41] method=GET user=kkk0510 path=/movies/movie-play/11 movie_id=11
+[2022-07-19 21:33:52] method=POST user=kkk0510 path=/movies/comment-create/ movie_id=11
+[2022-07-19 21:36:50] method=GET user=cuttygirl0510 path=/movies/movie-play/12 movie_id=12
+[2022-07-19 21:36:52] method=GET user=cuttygirl0510 path=/movies/movie-play/12 movie_id=12
+[2022-07-19 21:37:16] method=GET user=cuttygirl0510 path=/movies/movie-play/17 movie_id=17
+[2022-07-19 21:37:29] method=GET user=cuttygirl0510 path=/movies/movie-play/16 movie_id=16

@@ -1,0 +1,54 @@
+{% extends './base.html' %}
+
+{% block content %}
+{% if movie_filter %}
+    <h1>{{user}}님을 위한 추천 컨텐츠</h1>
+    <div class="wrap-note">
+        <div class="note">         
+            <div class="note-list">
+                <ul>
+                    {% for movie_title in movie_filter %} 
+                        {% for obj in page_obj.object_list %}
+                            {% if obj.title == movie_title %}
+                                <li>
+                                    <a href="{% url 'movie-detail' obj.id %}">
+                                            <h2>{{obj.title}}</h2>
+                                            <img src="{{obj.movie_image.url}}">
+                                            <p>{{obj.nation}}</p>
+                                            <p>{{obj.genre}}</p>
+                                            <p>{{obj.release_date}}</p>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="paging">
+                {% if page_obj.has_previous %} <!-- 수정해 주세요. -->
+                    <a href="?page=1" class="first">처음</a>
+                    <a href="?page={{page_obj.previous_page_number}}" class="prev">이전</a> <!-- 수정해 주세요. -->
+                {% endif %}
+
+                <span class="page">
+                    <p>{{page_obj.number}} of {{page_obj.paginator.num_pages}}</p> <!-- 수정해 주세요. -->
+                </span>
+
+                {% if page_obj.has_next %} <!-- 수정해 주세요. -->
+                    <a href="?page={{page_obj.next_page_number}}" class="next">다음</a> <!-- 수정해 주세요. -->
+                    <a href="?page={{page_obj.paginator.num_pages}}" class="last">마지막</a> <!-- 수정해 주세요. -->
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="wrap-default">
+        <div class="default">
+            <div class="default-box">
+                <p>"추천해드릴 컨텐츠가 없네요."</p>
+                <a href="{% url 'movie-list' %}">전체 컨텐츠 보러가기</a>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock content %}
